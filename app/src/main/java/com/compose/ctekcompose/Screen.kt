@@ -1,6 +1,5 @@
 package com.compose.ctekcompose
 
-import android.util.Log
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -9,10 +8,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -21,14 +17,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.core.view.accessibility.AccessibilityRecordCompat.setSource
 import com.compose.ctekcompose.ui.theme.ColorPurple
 import com.compose.ctekcompose.ui.theme.ColorWhite
 
@@ -100,7 +94,7 @@ fun ChargerList(imageId : Int, name:String,status:String){
 @Composable
 fun ChargerList(imageId : Int, name:String,status:String){
 
-    var  context  = LocalContext.current
+    val  context  = LocalContext.current
 
     Card(
         shape = RoundedCornerShape(10.dp),
@@ -112,7 +106,8 @@ fun ChargerList(imageId : Int, name:String,status:String){
         ),
         modifier = Modifier.padding(4.dp),
         onClick = {
-            Toast.makeText(context,"Clicked ",Toast.LENGTH_LONG).show()
+
+            Toast.makeText(context,"Clicked event ",Toast.LENGTH_LONG).show()
         }
 
 
